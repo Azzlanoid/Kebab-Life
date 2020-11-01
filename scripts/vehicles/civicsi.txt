@@ -1,0 +1,281 @@
+"vehicle"
+{
+	"wheelsperaxle"	"2"
+	"body"
+	{
+		"countertorquefactor"	"0.9"
+		"MassCenterOverride"	"0 0 5"
+		"massoverride"			"1000"		// kg
+		"addgravity"			"0.50"
+		"maxAngularVelocity"	"720"
+	}
+	"engine"
+	{
+		"horsepower"		"350"
+		"maxrpm"		"4200"
+		"maxspeed"		"35"		// mph
+		"maxReverseSpeed"	"14"		// mph
+		"autobrakeSpeedGain"	"1.1"		// 10% speed gain while coasting, put on the brakes after that
+		"autobrakeSpeedFactor"	"3.0"		// Brake is this times the speed gain
+		"autotransmission"	"1"
+		"axleratio"		"4.56"
+		"gear"			"3.2"		// 1st gear
+		"gear"			"2.4"		// 2nd gear
+		"gear"			"1.5"		// 3rd gear
+		"gear"			"1.0"		// 4th gear
+		"gear"			"0.84"		// 5th gear
+		"shiftuprpm"		"3800"
+		"shiftdownrpm"		"1600"
+
+		"boost"
+		{
+			"force"		"1.5"	// 1.5 car body mass * gravity * inches / second ^ 2
+			"duration"	"3.0"	// 3.0 second of boost
+			"delay"		"3.0"	// 3 seconds before you can use it again
+			"torqueboost"	"1"	// enable "sprint" mode of vehicle, not	force type booster		
+			"maxspeed"	"50"	// maximum turbo speed
+		}
+	}
+	"steering"
+	{
+		"degreesSlow"		"50"	// steering cone at zero to slow speed
+		"degreesFast"		"18"	// steering cone at fast speed to max speed
+		"degreesBoost"		"11"	// steering cone at max boost speed (blend toward this after max speed)
+		"steeringExponent"	"1.4"	// steering function is linear, then raised to this power to be slower at the beginning of the curve, faster at the end
+		"slowcarspeed"		"14"
+		"fastcarspeed"		"20"
+		"slowSteeringRate"	"4.0"		
+		"fastSteeringRate"	"2.0"
+		"steeringRestRateSlow"	"4.0"
+		"steeringRestRateFast"	"2.0"
+		"turnThrottleReduceSlow" "0.01"
+		"turnThrottleReduceFast" "2.0"
+		"brakeSteeringRateFactor"	"6"
+		"throttleSteeringRestRateFactor"	"2"
+		"boostSteeringRestRateFactor"	"1.7"
+		"boostSteeringRateFactor"	"1.7"
+
+		"powerSlideAccel"	"250"
+
+		"skidallowed"		"1"
+		"dustcloud"		"1"
+
+	}
+
+	// front axle
+	"axle"
+	{
+		"wheel"
+		{
+			"radius"	"13.4"
+			"mass"		"100"
+			"damping"	"0"
+			"rotdamping"	"0.0"
+			"material"	"jeeptire"
+			"skidmaterial"	"slidingrubbertire"
+			"brakematerial" "brakingrubbertire"
+		}
+		"suspension"
+		{
+			"springConstant"		"40"
+			"springDamping"			"0.7"
+			"stabilizerConstant"		"10"
+			"springDampingCompression"	"9"
+			"maxBodyForce"			"9"
+		}
+
+		"torquefactor"	"0.3"
+		"brakefactor"	"0.4"
+	}
+
+	// rear axle
+	"axle"
+	{
+		"wheel"
+		{
+			"radius"	"13.4"
+			"mass"		"100"
+			"damping"	"0"
+			"rotdamping"	"0.0"
+			"material"	"jeeptire"
+			"skidmaterial"	"slidingrubbertire"
+			"brakematerial" "brakingrubbertire"
+		}
+		"suspension"
+		{
+			"springConstant"		"40"
+			"springDamping"			"0.7"
+			"stabilizerConstant"		"10"
+			"springDampingCompression"	"9"
+			"maxBodyForce"			"9"
+		}
+		"torquefactor"	"0.7"
+		"brakefactor"	"0.6"
+	}
+}
+
+"Vehicle_Sounds"
+{
+	"Gear"
+	{
+		"Max_Speed"				"0.05"
+		"Speed_Approach_Factor"	"1"
+	}
+	"Gear"
+	{
+		"Max_Speed"				"0.15"
+		"Speed_Approach_Factor"	"0.07"
+	}
+	"Gear"
+	{
+		"Max_Speed"				"0.25"
+		"Speed_Approach_Factor"	"0.07"
+	}
+	"Gear"
+	{
+		"Max_Speed"				"0.34"
+		"Speed_Approach_Factor"	"0.07"
+	}
+	"Gear"
+	{
+		"Max_Speed"				"0.5"
+		"Speed_Approach_Factor"	"0.07"
+	}
+	"Gear"
+	{
+		"Max_Speed"				"1.7"
+		"Speed_Approach_Factor"	"0.03"
+	}
+	"State"
+	{
+		"Name"		"SS_START_IDLE"
+		"Sound"		"vehicles/sgmcars/civicsi/start.wav"
+		"Min_Time"	"1.20"
+	}
+	"State"
+	{
+		"Name"		"SS_GEAR_0"
+		"Sound"		"vehicles/sgmcars/civicsi/first.wav"
+		"Min_Time"	"0.75"
+	}
+	"State"
+	{
+		"Name"		"SS_GEAR_1_RESUME"
+		"Sound"		"vehicles/sgmcars/civicsi/first.wav"
+		"Min_Time"	"0.5"
+	}
+	"State"
+	{
+		"Name"		"SS_GEAR_3_RESUME"
+		"Sound"		"vehicles/sgmcars/civicsi/third.wav"
+		"Min_Time"	"0.5"
+	}
+	"State"
+	{
+		"Name"		"SS_GEAR_3"
+		"Sound"		"vehicles/sgmcars/civicsi/third.wav"
+		"Min_Time"	"0.5"
+	}
+	"State"
+	{
+		"Name"		"SS_GEAR_2"
+		"Sound"		"vehicles/sgmcars/civicsi/second.wav"
+		"Min_Time"	"0.5"
+	}
+	"State"
+	{
+		"Name"		"SS_GEAR_1"
+		"Sound"		"vehicles/sgmcars/civicsi/first.wav"
+		"Min_Time"	"0.5"
+	}
+	"State"
+	{
+		"Name"		"SS_SHUTDOWN"
+		"Sound"		"vehicles/sgmcars/civicsi/stop.wav"
+		"Min_Time"	"0"
+	}
+	"State"
+	{
+		"Name"		"SS_IDLE"
+		"Sound"		"vehicles/sgmcars/civicsi/idle.wav"
+		"Min_Time"	"0"
+	}
+	"State"
+	{
+		"Name"		"SS_REVERSE"
+		"Sound"		"vehicles/sgmcars/civicsi/rev.wav"
+		"Min_Time"	"0.5"
+	}
+	"State"
+	{
+		"Name"		"SS_SHUTDOWN_WATER"
+		"Sound"		"atv_stall_in_water"
+		"Min_Time"	"0"
+	}
+	"State"
+	{
+		"Name"		"SS_GEAR_4_RESUME"
+		"Sound"		"vehicles/sgmcars/civicsi/fourth_cruise.wav"
+		"Min_Time"	"0.5"
+	}
+	"State"
+	{
+		"Name"		"SS_SLOWDOWN"
+		"Sound"		"vehicles/sgmcars/civicsi/throttle_off.wav"
+		"Min_Time"	"0"
+	}
+	"State"
+	{
+		"Name"		"SS_TURBO"
+		"Sound"		"vehicles/sgmcars/civicsi/fourth_cruise.wav"
+		"Min_Time"	"2.5"
+	}
+	"State"
+	{
+		"Name"		"SS_GEAR_0_RESUME"
+		"Sound"		"vehicles/sgmcars/civicsi/first.wav"
+		"Min_Time"	"0.75"
+	}
+	"State"
+	{
+		"Name"		"SS_START_WATER"
+		"Sound"		"atv_start_in_water"
+		"Min_Time"	"0"
+	}
+	"State"
+	{
+		"Name"		"SS_GEAR_2_RESUME"
+		"Sound"		"vehicles/sgmcars/civicsi/second.wav"
+		"Min_Time"	"0.5"
+	}
+	"State"
+	{
+		"Name"		"SS_GEAR_4"
+		"Sound"		"vehicles/sgmcars/civicsi/fourth_cruise.wav"
+		"Min_Time"	"0.5"
+	}
+	"State"
+	{
+		"Name"		"SS_SLOWDOWN_HIGHSPEED"
+		"Sound"		"vehicles/sgmcars/civicsi/throttle_off.wav"
+		"Min_Time"	"0"
+	}
+	"CrashSound"
+	{
+		"Min_Speed"			"350"
+		"Min_Speed_Change"	"250"
+		"Sound"				"atv_impact_medium"
+		"Gear_Limit"		"1"
+	}
+	"CrashSound"
+	{
+		"Min_Speed"			"450"
+		"Min_Speed_Change"	"350"
+		"Sound"				"atv_impact_heavy"
+		"Gear_Limit"		"0"
+	}
+
+	"Skid_LowFriction"		"common/null.wav"
+	"Skid_NormalFriction"	"common/null.wav"
+	"Skid_HighFriction"		"common/null.wav"
+}

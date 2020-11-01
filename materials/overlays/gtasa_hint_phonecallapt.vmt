@@ -1,0 +1,5 @@
+"UnlitGeneric"
+{
+	"$basetexture" "overlays/gtasa_hint_phonecallapt"
+	"$translucent" "1"
+}
