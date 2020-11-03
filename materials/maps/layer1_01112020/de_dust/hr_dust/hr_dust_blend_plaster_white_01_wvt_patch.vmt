@@ -1,0 +1,14 @@
+"LightmappedGeneric"
+{
+	"$basetexture"		"de_dust/hr_dust/hr_dust_plaster_05_color"
+	"$bumpmap"		"de_dust/hr_dust/hr_dust_plaster_05_normal"
+	"$blendmodulatetransform"		"center 0 0 scale 1 1 rotate 0 translate 0 0"
+	"$surfaceprop"		"concrete"
+	"$detail"		"de_dust/hr_dust/hr_dust_asphalt_04_detail"
+	"$detailscale"		"[.45 .45]"
+	"$detailblendfactor"		"-0.650000"
+	"$detail2"		"de_dust/hr_dust/hr_dust_asphalt_04_detail"
+	"$detailscale2"		"[.40 .40]"
+	"$detailblendfactor2"		"0.750000"
+	"%keywords"		"hrdust,ground,street,asphalt"
+}

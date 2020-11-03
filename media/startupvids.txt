@@ -1,8 +1,3 @@
 media/esrb_warning.bik
-media/logo_amd_hd.bik
-media/logo_kaiko.bik
-media/logo_nordic_hd.bik
-media/SplashScreen.bik
-media/TWIMTBP.bik
+media/vakve.bik
 media/ubi_logo.bik
-media/gtasaintro.bik

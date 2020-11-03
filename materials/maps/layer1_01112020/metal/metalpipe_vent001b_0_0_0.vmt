@@ -1,0 +1,8 @@
+"patch"
+{
+	"include"		"materials/METAL/METALPIPE_VENT001B.vmt"
+	"replace"
+	{
+		"$envmap"		"maps/layer1_01112020/c0_0_0"
+	}
+}
